@@ -2,17 +2,23 @@ package org.bhawanisingh.java.demo;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 
 /**
  *
@@ -30,8 +36,17 @@ public class Main extends JFrame {
 	private JScrollPane sideScrollPane;
 	private JScrollPane outputScrollPane;
 	private JSplitPane splitPane;
+	private JLabel stringBasicLabel;
 
 	private JTextArea outputTextArea;
+
+	private Border paddingBorder = BorderFactory.createEmptyBorder(10, 10, 10, 10);
+	private Border bevelRaised = BorderFactory.createBevelBorder(BevelBorder.RAISED);
+	private Border bevelLowered = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
+	private Border compoundRaised = BorderFactory.createCompoundBorder(this.bevelRaised, this.paddingBorder);
+	private Border compoundLowered = BorderFactory.createCompoundBorder(this.bevelLowered, this.paddingBorder);
+
+	private CardLayout cardLayout = new CardLayout();
 
 	/**
 	 * 
@@ -40,6 +55,8 @@ public class Main extends JFrame {
 		this.redirectingOutputStreams();
 		this.initialize();
 		this.addComponents();
+		this.theming();
+		this.addListeners();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.pack();
 		this.setLocationRelativeTo(null);
@@ -49,8 +66,9 @@ public class Main extends JFrame {
 
 	private void initialize() {
 		this.mainPanel = new JPanel(new BorderLayout(5, 5));
-		this.componentPanel = new JPanel(new CardLayout());
+		this.componentPanel = new JPanel(this.cardLayout);
 		this.stringBasicPanel = new StringBasicPanel(this);
+		this.stringBasicLabel = new JLabel("String Basic");
 		this.stringBasicScrollPane = new JScrollPane(this.stringBasicPanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.sidePanel = new JPanel();
 		this.sideScrollPane = new JScrollPane(this.sidePanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -60,10 +78,30 @@ public class Main extends JFrame {
 	}
 
 	private void addComponents() {
-		this.componentPanel.add(this.stringBasicScrollPane);
+		this.sidePanel.add(this.stringBasicLabel);
+		this.componentPanel.add("StringBasic", this.stringBasicScrollPane);
 		this.mainPanel.add(this.sideScrollPane, BorderLayout.WEST);
 		this.mainPanel.add(this.componentPanel, BorderLayout.CENTER);
 		this.add(this.splitPane);
+	}
+
+	private void theming() {
+		this.stringBasicLabel.setBorder(this.compoundRaised);
+	}
+
+	private void addListeners() {
+		this.stringBasicLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Main.this.updateLabelBorder(Main.this.stringBasicLabel);
+				Main.this.cardLayout.show(Main.this.componentPanel, "StringBasic");
+			}
+		});
+	}
+
+	private void updateLabelBorder(JLabel label) {
+
+		label.setBorder(this.compoundLowered);
 	}
 
 	private void updateTextArea(final String text) {

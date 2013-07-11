@@ -1,6 +1,8 @@
 Demo
 ====
-Repo to demostrate various features of java language.
+All the code is licensed Under GNU GPL v3
+====
+Repo to demonstrate various features of java language.
 
 It includes :
 

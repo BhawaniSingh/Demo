@@ -1,20 +1,17 @@
-package org.bhawanisingh.java.demo;
+package org.bhawanisingh.java.demo.array;
 
 /**
  * 
  * @author Bhawani Singh
  */
-class ArrayDemo
-{
-	static int max(int ar[])
-	{
+
+class ArrayDemo {
+	public static int max(int ar[]) {
 		int max = ar[0];
 		System.out.print("Array Is :\t");
-		for (int i = 1; i < ar.length; i++)
-		{
+		for (int i = 1; i < ar.length; i++) {
 			System.out.print(ar[i] + " ");
-			if (max < ar[i])
-			{
+			if (max < ar[i]) {
 				max = ar[i];
 			}
 		}
@@ -22,16 +19,14 @@ class ArrayDemo
 		return max;
 	}
 
-	static int max1(int ar[][])
-	{
+	public static int max1(int ar[][]) {
 		int max = ar[0][0];
 		System.out.print("Array Is :\n");
 		for (int[] element : ar) {
 			System.out.println();
 			for (int element2 : element) {
 				System.out.print(element2 + " ");
-				if (max < element2)
-				{
+				if (max < element2) {
 					max = element2;
 				}
 			}
@@ -40,15 +35,12 @@ class ArrayDemo
 		return max;
 	}
 
-	static int min(int ar[])
-	{
+	public static int min(int ar[]) {
 		int min = ar[0];
 		System.out.print("Array Is :\t");
-		for (int i = 1; i < ar.length; i++)
-		{
+		for (int i = 1; i < ar.length; i++) {
 			System.out.print(ar[i] + " ");
-			if (min > ar[i])
-			{
+			if (min > ar[i]) {
 				min = ar[i];
 			}
 		}
@@ -56,16 +48,14 @@ class ArrayDemo
 		return min;
 	}
 
-	static int min1(int ar[][])
-	{
+	public static int min1(int ar[][]) {
 		int min = ar[0][0];
 		System.out.print("Array Is :\n");
 		for (int[] element : ar) {
 			System.out.print("\n");
 			for (int element2 : element) {
 				System.out.print(element2 + " ");
-				if (min > element2)
-				{
+				if (min > element2) {
 					min = element2;
 				}
 			}
@@ -74,20 +64,16 @@ class ArrayDemo
 		return min;
 	}
 
-	static void sort(int ar[])
-	{
+	public static void sort(int ar[]) {
 		int temp;
 		System.out.print("Array Before Sorting :\t");
 		for (int element : ar) {
 			System.out.print(element + " ");
 		}
 		// logic for increasng order
-		for (int i = 0; i < ar.length; i++)
-		{
-			for (int j = i; j < ar.length; j++)
-			{
-				if (ar[i] > ar[j])
-				{
+		for (int i = 0; i < ar.length; i++) {
+			for (int j = i; j < ar.length; j++) {
+				if (ar[i] > ar[j]) {
 					temp = ar[i];
 					ar[i] = ar[j];
 					ar[j] = temp;
@@ -102,12 +88,9 @@ class ArrayDemo
 		System.out.println("\n");
 
 		// logic for decreasing order
-		for (int i = 0; i < ar.length; i++)
-		{
-			for (int j = i; j < ar.length; j++)
-			{
-				if (ar[i] < ar[j])
-				{
+		for (int i = 0; i < ar.length; i++) {
+			for (int j = i; j < ar.length; j++) {
+				if (ar[i] < ar[j]) {
 					temp = ar[i];
 					ar[i] = ar[j];
 					ar[j] = temp;
@@ -122,8 +105,7 @@ class ArrayDemo
 		System.out.println("\n");
 	}
 
-	static void sort1(int ar[][])
-	{
+	public static void sort1(int ar[][]) {
 		int temp;
 		int temp_ar[][] = ar;
 		System.out.print("Array Before Sorting :\t");
@@ -135,20 +117,15 @@ class ArrayDemo
 		}
 		System.out.print("\n");
 		// logic for increasng order
-		for (int i = 0; i < ar.length; i++)
-		{
+		for (int i = 0; i < ar.length; i++) {
 			// System.out.println("Inside I Loop");
-			for (int j = 0; j < ar[i].length; j++)
-			{
+			for (int j = 0; j < ar[i].length; j++) {
 				// System.out.println("Inside J Loop");
-				for (int k = 0; k < ar.length; k++)
-				{
+				for (int k = 0; k < ar.length; k++) {
 					// System.out.println("Inside K Loop");
-					for (int l = 0; l < ar[k].length; l++)
-					{
+					for (int l = 0; l < ar[k].length; l++) {
 						// System.out.println("Inside L Loop");
-						if (ar[i][j] < ar[k][l])
-						{
+						if (ar[i][j] < ar[k][l]) {
 							// System.out.println("Inside If Condition");
 							temp = ar[i][j];
 							ar[i][j] = ar[k][l];
@@ -168,16 +145,11 @@ class ArrayDemo
 		System.out.println("\n");
 
 		// logic for decreasing order
-		for (int i = 0; i < ar.length; i++)
-		{
-			for (int j = 0; j < ar[i].length; j++)
-			{
-				for (int k = 0; k < ar.length; k++)
-				{
-					for (int l = 0; l < ar[k].length; l++)
-					{
-						if (ar[i][j] > ar[k][l])
-						{
+		for (int i = 0; i < ar.length; i++) {
+			for (int j = 0; j < ar[i].length; j++) {
+				for (int k = 0; k < ar.length; k++) {
+					for (int l = 0; l < ar[k].length; l++) {
+						if (ar[i][j] > ar[k][l]) {
 							temp = ar[i][j];
 							ar[i][j] = ar[k][l];
 							ar[k][l] = temp;
@@ -188,8 +160,7 @@ class ArrayDemo
 		}
 		// output for decreasing order
 		System.out.println("Array in decreasing order:\t");
-		for (int i = 0; i < ar.length; ++i)
-		{
+		for (int i = 0; i < ar.length; ++i) {
 			for (int j = 0; j < temp_ar[i].length; j++) {
 				System.out.print(ar[i][j] + "  ");
 			}
@@ -197,18 +168,15 @@ class ArrayDemo
 		System.out.println("\n");
 	}
 
-	static void mergesort(int x[], int y[])
-	{
+	public static void mergesort(int x[], int y[]) {
 		int z[] = new int[x.length + y.length];
 		System.out.print("First Array :\t");
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.print(x[i] + " ");
 			z[i] = x[i];
 		}
 		System.out.print("\nSecond Array :\t");
-		for (int i = x.length, j = 0; i < z.length; i++, j++)
-		{
+		for (int i = x.length, j = 0; i < z.length; i++, j++) {
 			System.out.print(y[j] + " ");
 			z[i] = y[j];
 		}
@@ -216,8 +184,7 @@ class ArrayDemo
 		ArrayDemo.sort(z);
 	}
 
-	static void union(int x[], int y[])
-	{
+	public static void union(int x[], int y[]) {
 		boolean chk;
 		int len = 0;
 		System.out.print("First Array :\t");
@@ -229,35 +196,27 @@ class ArrayDemo
 			System.out.print(element + " ");
 		}
 		System.out.print("\n");
-		for (int i = 0; i < x.length; i++)
-		{
-			loop: for (int j = 0; j < y.length; j++)
-			{
-				if (x[i] == y[j])
-				{
+		for (int i = 0; i < x.length; i++) {
+			loop: for (int j = 0; j < y.length; j++) {
+				if (x[i] == y[j]) {
 					len++;
 					break loop;
 				}
 			}
 		}
 		int z[] = new int[(x.length + y.length) - len];
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			z[i] = x[i];
 		}
-		for (int i = x.length, j = 0; j < y.length; j++)
-		{
+		for (int i = x.length, j = 0; j < y.length; j++) {
 			chk = true;
-			loop: for (int k = 0; k < x.length; k++)
-			{
-				if (y[j] == x[k])
-				{
+			loop: for (int k = 0; k < x.length; k++) {
+				if (y[j] == x[k]) {
 					chk = false;
 					break loop;
 				}
 			}
-			if (chk == true)
-			{
+			if (chk == true) {
 				z[i] = y[j];
 				++i;
 			}
@@ -269,8 +228,7 @@ class ArrayDemo
 		System.out.println("\n");
 	}
 
-	static void intersection(int x[], int y[])
-	{
+	public static void intersection(int x[], int y[]) {
 		System.out.print("First Array :\t");
 		for (int element : x) {
 			System.out.print(element + " ");
@@ -281,24 +239,18 @@ class ArrayDemo
 		}
 		System.out.print("\n");
 		int len = 0;
-		for (int i = 0; i < x.length; i++)
-		{
-			loop: for (int j = 0; j < y.length; j++)
-			{
-				if (x[i] == y[j])
-				{
+		for (int i = 0; i < x.length; i++) {
+			loop: for (int j = 0; j < y.length; j++) {
+				if (x[i] == y[j]) {
 					len++;
 					break loop;
 				}
 			}
 		}
 		int z[] = new int[len];
-		for (int i = 0, j = 0; j < y.length; j++)
-		{
-			loop: for (int k = 0; k < x.length; k++)
-			{
-				if (y[j] == x[k])
-				{
+		for (int i = 0, j = 0; j < y.length; j++) {
+			loop: for (int k = 0; k < x.length; k++) {
+				if (y[j] == x[k]) {
 					z[i] = y[j];
 					++i;
 					break loop;
@@ -312,35 +264,26 @@ class ArrayDemo
 		System.out.println("\n");
 	}
 
-	static void matrixadd(int x[][], int y[][])
-	{
-		if (x.length != y.length)
-		{
+	public static void matrixadd(int x[][], int y[][]) {
+		if (x.length != y.length) {
 			System.out.println("Addition Not Possible");
-		}
-		else
-		{
+		} else {
 			int z[][] = new int[x.length][x[0].length];
-			for (int i = 0, k = 0; k < y.length; i++, k++)
-			{
+			for (int i = 0, k = 0; k < y.length; i++, k++) {
 				System.out.print("\n");
-				for (int j = 0; j < x[i].length; j++)
-				{
+				for (int j = 0; j < x[i].length; j++) {
 					System.out.print(x[i][j] + "  ");
 				}
 
 				System.out.print("    ");
-				for (int j = 0; j < y[k].length; j++)
-				{
+				for (int j = 0; j < y[k].length; j++) {
 					System.out.print(y[i][j] + "  ");
 				}
 			}
 
-			for (int i = 0; i < x.length; i++)
-			{
+			for (int i = 0; i < x.length; i++) {
 				System.out.print("\n\t");
-				for (int j = 0; j < x[i].length; j++)
-				{
+				for (int j = 0; j < x[i].length; j++) {
 					z[i][j] = x[i][j] + y[i][j];
 					System.out.print(z[i][j] + "  ");
 				}
@@ -349,63 +292,50 @@ class ArrayDemo
 		}
 	}
 
-	static void matrixsum(int x[][])
-	{
+	public static void matrixsum(int x[][]) {
 		int sumr = 0, sumc[], sumd1 = 0, sumd2 = 0;
 		sumc = new int[x[0].length];
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			sumr = 0;
 			System.out.print("\n   ");
-			for (int j = 0; j < x[i].length; j++)
-			{
+			for (int j = 0; j < x[i].length; j++) {
 				System.out.print(x[i][j] + " ");
 				sumc[j] = sumc[j] + x[i][j];
 				sumr = sumr + x[i][j];
-				if (i == j)
-				{
+				if (i == j) {
 					sumd1 = sumd1 + x[i][j];
 				}
-				if (j == (x[0].length - (i + 1)))
-				{
+				if (j == (x[0].length - (i + 1))) {
 					sumd2 = sumd2 + x[i][j];
 				}
 			}
 			System.out.print(sumr);
 		}
 		System.out.print("\n" + sumd2 + " ");
-		for (int i = 0; i < x[0].length; i++)
-		{
+		for (int i = 0; i < x[0].length; i++) {
 			System.out.print(sumc[i] + " ");
 		}
 		System.out.print(sumd1);
 		// System.out.println(sumd1 + "\n" + sumd2 + "\n");
 	}
 
-	static void matrixm(int x[][], int y[][])
-	{
+	public static void matrixm(int x[][], int y[][]) {
 		int z[][] = new int[x.length][x[0].length];
-		if (x[0].length != y.length)
-		{
+		if (x[0].length != y.length) {
 			System.out.println("Sorry Matrices Can't Be Multiplied");
 		}
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.print("\n");
-			for (int j = 0; j < x[i].length; j++)
-			{
+			for (int j = 0; j < x[i].length; j++) {
 				System.out.print(x[i][j] + "  ");
 			}
 			System.out.print("\t");
-			for (int j = 0; j < y[i].length; j++)
-			{
+			for (int j = 0; j < y[i].length; j++) {
 				System.out.print(y[i][j] + "  ");
 			}
 		}
-		for (int i = 0; i < x.length; i++)
-		{
-			for (int j = 0; j < x[i].length; j++)
-			{
+		for (int i = 0; i < x.length; i++) {
+			for (int j = 0; j < x[i].length; j++) {
 				z[i][j] = 0;
 				for (int[] element : y) {
 					z[i][j] = z[i][j] + (x[i][j] * element[i]);
@@ -421,25 +351,18 @@ class ArrayDemo
 		}
 	}
 
-	static int triangleAmax(int x[][])
-	{
+	public static int triangleAmax(int x[][]) {
 		int max = x[0][0];
 		System.out.print("Triangle Is:\n");
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.print("\n");
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i <= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i <= j) {
 					System.out.print(x[i][j] + " ");
-					if (max < x[i][j])
-					{
+					if (max < x[i][j]) {
 						max = x[i][j];
 					}
-				}
-				else
-				{
+				} else {
 					System.out.print("  ");
 				}
 			}
@@ -448,25 +371,18 @@ class ArrayDemo
 		return max;
 	}
 
-	static int triangleAmin(int x[][])
-	{
+	public static int triangleAmin(int x[][]) {
 		int min = x[0][0];
 		System.out.print("Triangle Is:\n");
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.print("\n");
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i <= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i <= j) {
 					System.out.print(x[i][j] + " ");
-					if (min > x[i][j])
-					{
+					if (min > x[i][j]) {
 						min = x[i][j];
 					}
-				}
-				else
-				{
+				} else {
 					System.out.print("  ");
 				}
 			}
@@ -475,60 +391,45 @@ class ArrayDemo
 		return min;
 	}
 
-	static void triangleAsum(int x[][])
-	{
+	public static void triangleAsum(int x[][]) {
 		int sumr = 0, sumc[], sumd1 = 0, sumd2 = 0;
 		sumc = new int[x[0].length];
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			sumr = 0;
 			System.out.print("\n   ");
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i <= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i <= j) {
 					System.out.print(x[i][j] + " ");
 					sumc[j] = sumc[j] + x[i][j];
 					sumr = sumr + x[i][j];
-					if (i == j)
-					{
+					if (i == j) {
 						sumd1 = sumd1 + x[i][j];
 					}
-					if (j == (x[0].length - (i + 1)))
-					{
+					if (j == (x[0].length - (i + 1))) {
 						sumd2 = sumd2 + x[i][j];
 					}
-				}
-				else
-				{
+				} else {
 					System.out.print("  ");
 				}
 			}
 			System.out.print(sumr);
 		}
 		System.out.print("\n\n" + sumd2 + " ");
-		for (int i = 0; i < x[0].length; i++)
-		{
+		for (int i = 0; i < x[0].length; i++) {
 			System.out.print(sumc[i] + " ");
 		}
 		System.out.print(sumd1);
 	}
 
-	static int triangleAsum1(int x[][])
-	{
+	public static int triangleAsum1(int x[][]) {
 		int sum = 0;
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.println();
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i <= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i <= j) {
 					System.out.print(x[i][j] + " ");
 					sum = sum + x[i][j];
-				}
-				else
-				{
+				} else {
 					System.out.print("  ");
 				}
 			}
@@ -537,19 +438,14 @@ class ArrayDemo
 		return sum;
 	}
 
-	static int triangleBmax(int x[][])
-	{
+	public static int triangleBmax(int x[][]) {
 		int max = x[0][0];
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.print("\n");
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i >= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i >= j) {
 					System.out.print(x[i][j] + " ");
-					if (max < x[i][j])
-					{
+					if (max < x[i][j]) {
 						max = x[i][j];
 					}
 				}
@@ -559,19 +455,14 @@ class ArrayDemo
 		return max;
 	}
 
-	static int triangleBmin(int x[][])
-	{
+	public static int triangleBmin(int x[][]) {
 		int min = x[0][0];
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.print("\n");
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i >= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i >= j) {
 					System.out.print(x[i][j] + " ");
-					if (min > x[i][j])
-					{
+					if (min > x[i][j]) {
 						min = x[i][j];
 					}
 				}
@@ -581,55 +472,42 @@ class ArrayDemo
 		return min;
 	}
 
-	static void triangleBsum(int x[][])
-	{
+	public static void triangleBsum(int x[][]) {
 		int sumr = 0, sumc[], sumd1 = 0, sumd2 = 0;
 		sumc = new int[x[0].length];
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			sumr = 0;
 			System.out.print("\n   ");
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i >= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i >= j) {
 					System.out.print(x[i][j] + " ");
 					sumc[j] = sumc[j] + x[i][j];
 					sumr = sumr + x[i][j];
-					if (i == j)
-					{
+					if (i == j) {
 						sumd1 = sumd1 + x[i][j];
 					}
-					if (j == (x[0].length - (i + 1)))
-					{
+					if (j == (x[0].length - (i + 1))) {
 						sumd2 = sumd2 + x[i][j];
 					}
-				}
-				else
-				{
+				} else {
 					System.out.print("  ");
 				}
 			}
 			System.out.print(sumr);
 		}
 		System.out.print("\n\n" + sumd2 + " ");
-		for (int i = 0; i < x[0].length; i++)
-		{
+		for (int i = 0; i < x[0].length; i++) {
 			System.out.print(sumc[i] + " ");
 		}
 		System.out.print(sumd1);
 	}
 
-	static int triangleBsum1(int x[][])
-	{
+	public static int triangleBsum1(int x[][]) {
 		int sum = 0;
-		for (int i = 0; i < x.length; i++)
-		{
+		for (int i = 0; i < x.length; i++) {
 			System.out.println();
-			for (int j = 0; j < x[i].length; j++)
-			{
-				if (i >= j)
-				{
+			for (int j = 0; j < x[i].length; j++) {
+				if (i >= j) {
 					System.out.print(x[i][j] + " ");
 					sum = sum + x[i][j];
 				}
@@ -639,8 +517,7 @@ class ArrayDemo
 		return sum;
 	}
 
-	public static void main(String... s)
-	{
+	public static void main(String... s) {
 		// For maximum val
 		System.out.println("Max Value Is:\t" + ArrayDemo.max(new int[] { 10, 100, 200, 23, 34, 3434, 546, 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 }) + "\n");
 

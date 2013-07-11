@@ -1,11 +1,11 @@
-package org.bhawanisingh.java.demo;
+package org.bhawanisingh.java.demo.String;
 
 /**
  * 
  * @author Bhawani Singh
  */
 public class StringDemo {
-	static int wordCount(String s) {
+	public static int wordCount(String s) {
 		s = StringDemo.allTrim(s);
 		if (s.length() == 0) {
 			return 0;
@@ -26,7 +26,7 @@ public class StringDemo {
 		return count;
 	}
 
-	static int spaceCount(String s) {
+	public static int spaceCount(String s) {
 		if (s.length() == 0) {
 			return 0;
 		}
@@ -40,7 +40,7 @@ public class StringDemo {
 		return count;
 	}
 
-	static int charCount(String s) {
+	public static int charCount(String s) {
 		char c[] = s.toCharArray();
 		int count = 0;
 		for (char element : c) {
@@ -51,7 +51,7 @@ public class StringDemo {
 		return count;
 	}
 
-	static String reverseString(String s) {
+	public static String reverseString(String s) {
 		char c[] = s.toCharArray();
 		char c1[] = new char[s.length()];
 		for (int i = 0; i < c.length; i++) {
@@ -61,7 +61,7 @@ public class StringDemo {
 		return s1;
 	}
 
-	static boolean pallindrome(String s) {
+	public static boolean pallindrome(String s) {
 		String s1 = StringDemo.reverseString(s);
 		char c[] = s.toCharArray();
 		char c1[] = s1.toCharArray();
@@ -73,7 +73,7 @@ public class StringDemo {
 		return true;
 	}
 
-	static String lTrim(String s) {
+	public static String lTrim(String s) {
 		char c[] = s.toCharArray();
 		int j = 0;
 		loop: for (int i = 0; i < c.length; i++) {
@@ -90,20 +90,20 @@ public class StringDemo {
 		return s;
 	}
 
-	static String rTrim(String s) {
+	public static String rTrim(String s) {
 		s = StringDemo.reverseString(s);
 		s = StringDemo.lTrim(s);
 		s = StringDemo.reverseString(s);
 		return s;
 	}
 
-	static String allTrim(String s) {
+	public static String allTrim(String s) {
 		s = StringDemo.lTrim(s);
 		s = StringDemo.rTrim(s);
 		return s;
 	}
 
-	static String squeeze(String s) {
+	public static String squeeze(String s) {
 		s = StringDemo.allTrim(s);
 		int count = StringDemo.spaceCount(s);
 		char c[] = s.toCharArray();
@@ -118,7 +118,7 @@ public class StringDemo {
 		return s;
 	}
 
-	static int vowelCount(String s) {
+	public static int vowelCount(String s) {
 		char c[] = s.toCharArray();
 		int count = 0;
 		for (char element : c) {
@@ -139,7 +139,7 @@ public class StringDemo {
 		return count;
 	}
 
-	static int length(String s) {
+	public static int length(String s) {
 		int i = 0;
 		try {
 			for (i = 0; i >= i; i++) {
@@ -150,7 +150,7 @@ public class StringDemo {
 		}
 	}
 
-	static void sequenceCount(String s) {
+	public static void sequenceCount(String s) {
 		char c[] = s.toCharArray();
 		int count;
 		int temp;
@@ -178,7 +178,7 @@ public class StringDemo {
 		}
 	}
 
-	static void frequencyCount(String s) {
+	public static void frequencyCount(String s) {
 		char c[] = s.toCharArray();
 		int count;
 		for (int i = 0; i < c.length; i++) {
@@ -197,7 +197,7 @@ public class StringDemo {
 		}
 	}
 
-	static String changeCase(String s) {
+	public static String changeCase(String s) {
 		byte b[] = s.getBytes();
 		for (int i = 0; i < b.length; i++) {
 			if ((b[i] >= 65) && (b[i] <= 90)) {
@@ -211,7 +211,7 @@ public class StringDemo {
 		return s;
 	}
 
-	static String singleOccurance(String s) {
+	public static String singleOccurance(String s) {
 		char c[] = s.toCharArray();
 		int count = 0;
 		int temp;
@@ -243,7 +243,7 @@ public class StringDemo {
 		return s;
 	}
 
-	static String sortedOrder(String s) {
+	public static String sortedOrder(String s) {
 		byte b[] = s.getBytes();
 		byte temp;
 		for (int i = 0; i < b.length; i++) {
@@ -259,7 +259,7 @@ public class StringDemo {
 		return s;
 	}
 
-	static String sortedWord(String s) {
+	public static String sortedWord(String s) {
 		int size = StringDemo.wordCount(s);
 		String s1[] = new String[size];
 		String temp;
@@ -287,7 +287,7 @@ public class StringDemo {
 		return s;
 	}
 
-	static boolean find(String s, String f) {
+	public static boolean find(String s, String f) {
 		if (s.length() < f.length()) {
 			return false;
 		}
@@ -307,7 +307,7 @@ public class StringDemo {
 		return false;
 	}
 
-	static String replace(String s, String f, String r) {
+	public static String replace(String s, String f, String r) {
 		if (s.length() < f.length()) {
 			return "";
 		}
@@ -348,7 +348,7 @@ public class StringDemo {
 		return "String Not Found";
 	}
 
-	static boolean equals(String s, String s1) {
+	public static boolean equals(String s, String s1) {
 		if (s.length() != s1.length()) {
 			return false;
 		}
@@ -362,7 +362,7 @@ public class StringDemo {
 		return true;
 	}
 
-	static void triangle1(String s) {
+	public static void triangle1(String s) {
 		char c[] = s.toCharArray();
 		for (int i = 0; i < c.length; i++) {
 			System.out.println();
@@ -372,7 +372,7 @@ public class StringDemo {
 		}
 	}
 
-	static void triangle2(String s) {
+	public static void triangle2(String s) {
 		char c[] = s.toCharArray();
 		for (int i = 0; i < c.length; i++) {
 			System.out.println();
@@ -382,7 +382,7 @@ public class StringDemo {
 		}
 	}
 
-	static void triangle3(String s) {
+	public static void triangle3(String s) {
 		char c[] = s.toCharArray();
 		for (int i = 0; i < c.length; i++) {
 			System.out.println();
@@ -396,7 +396,7 @@ public class StringDemo {
 		}
 	}
 
-	static void triangle4(String s) {
+	public static void triangle4(String s) {
 		char c[] = s.toCharArray();
 		for (int i = 0; i < c.length; i++) {
 			System.out.println();
@@ -417,7 +417,7 @@ public class StringDemo {
 		}
 	}
 
-	static int compare(String s, String s1) {
+	public static int compare(String s, String s1) {
 		if ((s.length() - s1.length()) != 0) {
 			return s.length() - s1.length();
 		}

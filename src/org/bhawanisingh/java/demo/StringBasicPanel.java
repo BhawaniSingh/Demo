@@ -14,9 +14,6 @@ import javax.swing.border.EtchedBorder;
 
 import org.bhawanisingh.java.demo.String.StringDemo;
 
-/**
- *
- */
 public class StringBasicPanel extends JPanel {
 
 	private JTextField textField;

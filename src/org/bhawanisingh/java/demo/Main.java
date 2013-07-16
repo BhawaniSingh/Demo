@@ -29,7 +29,7 @@ public class Main extends JFrame {
 
 	private JPanel mainPanel;
 	private JPanel componentPanel;
-	private JPanel arrayPanel;
+	private ArrayPanel arrayPanel;
 	private StringBasicPanel stringBasicPanel;
 	private StringAdvancePanel stringAdvancePanel;
 	private JPanel sidePanel;
@@ -41,6 +41,7 @@ public class Main extends JFrame {
 	private JSplitPane splitPane;
 	private JLabel stringBasicLabel;
 	private JLabel stringAdvanceLabel;
+	private JLabel arrayLabel;
 
 	private JTextArea outputTextArea;
 
@@ -79,6 +80,10 @@ public class Main extends JFrame {
 		this.stringAdvancePanel = new StringAdvancePanel(this);
 		this.stringAdvanceScrollPane = new JScrollPane(this.stringAdvancePanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
+		this.arrayLabel = new JLabel("Arrays");
+		this.arrayPanel = new ArrayPanel(this);
+		this.arrayScrollPane = new JScrollPane(this.arrayPanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
 		this.sidePanel = new JPanel(new GridBagLayout());
 		// this.sidePanel.setLayout(new BoxLayout(this.sidePanel, BoxLayout.PAGE_AXIS));
 		this.sideScrollPane = new JScrollPane(this.sidePanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -90,9 +95,11 @@ public class Main extends JFrame {
 	private void addComponents() {
 		Layout.add(this.sidePanel, this.stringBasicLabel, 0, 0, 1, 1, 0, 0, GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL);
 		Layout.add(this.sidePanel, this.stringAdvanceLabel, 0, 1, 1, 1, 0, 0, GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL);
+		Layout.add(this.sidePanel, this.arrayLabel, 0, 2, 1, 1, 0, 0, GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL);
 
 		this.componentPanel.add("StringBasic", this.stringBasicScrollPane);
 		this.componentPanel.add("StringAdvance", this.stringAdvanceScrollPane);
+		this.componentPanel.add("Arrays", this.arrayScrollPane);
 		this.mainPanel.add(this.sideScrollPane, BorderLayout.WEST);
 		this.mainPanel.add(this.componentPanel, BorderLayout.CENTER);
 		this.add(this.splitPane);
@@ -101,6 +108,7 @@ public class Main extends JFrame {
 	private void theming() {
 		this.stringBasicLabel.setBorder(this.compoundRaised);
 		this.stringAdvanceLabel.setBorder(this.compoundRaised);
+		this.arrayLabel.setBorder(this.compoundRaised);
 	}
 
 	private void addListeners() {
@@ -119,12 +127,20 @@ public class Main extends JFrame {
 				Main.this.cardLayout.show(Main.this.componentPanel, "StringAdvance");
 			}
 		});
+		this.arrayLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Main.this.updateLabelBorder(Main.this.arrayLabel);
+				Main.this.cardLayout.show(Main.this.componentPanel, "Arrays");
+			}
+		});
 
 	}
 
 	private void updateLabelBorder(JLabel label) {
 		this.stringBasicLabel.setBorder(this.compoundRaised);
 		this.stringAdvanceLabel.setBorder(this.compoundRaised);
+		this.arrayLabel.setBorder(this.compoundRaised);
 		label.setBorder(this.compoundLowered);
 	}
 

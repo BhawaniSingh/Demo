@@ -5,12 +5,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.border.EtchedBorder;
 
 import org.bhawanisingh.java.demo.String.StringDemo;
 
@@ -51,7 +49,6 @@ public class StringBasicPanel extends JPanel {
 		this.main = main;
 		this.initialize();
 		this.addListeners();
-		this.theming();
 		this.addComponents();
 	}
 
@@ -60,7 +57,7 @@ public class StringBasicPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 		this.textField = new JTextField("Enter A String");
 		this.buttonGroup = new ButtonGroup();
-		this.buttonPanel = new JPanel(new GridLayout(10, 3));
+		this.buttonPanel = new JPanel(new GridLayout(7, 3));
 
 		this.wordCountRadioButton = new JRadioButton("Word Count");
 		this.spaceCountRadioButton = new JRadioButton("Space Count");
@@ -273,10 +270,6 @@ public class StringBasicPanel extends JPanel {
 				StringDemo.triangle4(StringBasicPanel.this.textField.getText());
 			}
 		});
-	}
-
-	private void theming() {
-		this.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 	}
 
 	private void addComponents() {

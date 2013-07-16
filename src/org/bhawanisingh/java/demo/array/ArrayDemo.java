@@ -5,10 +5,11 @@ package org.bhawanisingh.java.demo.array;
  * @author Bhawani Singh
  */
 
-class ArrayDemo {
+public class ArrayDemo {
 	public static int max(int ar[]) {
 		int max = ar[0];
 		System.out.print("Array Is :\t");
+		System.out.print(ar[0] + " ");
 		for (int i = 1; i < ar.length; i++) {
 			System.out.print(ar[i] + " ");
 			if (max < ar[i]) {
@@ -116,7 +117,7 @@ class ArrayDemo {
 			}
 		}
 		System.out.print("\n");
-		// logic for increasng order
+		// logic for increasing order
 		for (int i = 0; i < ar.length; i++) {
 			// System.out.println("Inside I Loop");
 			for (int j = 0; j < ar[i].length; j++) {
@@ -297,7 +298,7 @@ class ArrayDemo {
 		sumc = new int[x[0].length];
 		for (int i = 0; i < x.length; i++) {
 			sumr = 0;
-			System.out.print("\n   ");
+			System.out.print("\n     ");
 			for (int j = 0; j < x[i].length; j++) {
 				System.out.print(x[i][j] + " ");
 				sumc[j] = sumc[j] + x[i][j];
@@ -363,7 +364,7 @@ class ArrayDemo {
 						max = x[i][j];
 					}
 				} else {
-					System.out.print("  ");
+					System.out.print("   ");
 				}
 			}
 		}
@@ -383,7 +384,7 @@ class ArrayDemo {
 						min = x[i][j];
 					}
 				} else {
-					System.out.print("  ");
+					System.out.print("   ");
 				}
 			}
 		}
@@ -409,7 +410,7 @@ class ArrayDemo {
 						sumd2 = sumd2 + x[i][j];
 					}
 				} else {
-					System.out.print("  ");
+					System.out.print("   ");
 				}
 			}
 			System.out.print(sumr);
@@ -430,7 +431,7 @@ class ArrayDemo {
 					System.out.print(x[i][j] + " ");
 					sum = sum + x[i][j];
 				} else {
-					System.out.print("  ");
+					System.out.print("   ");
 				}
 			}
 		}

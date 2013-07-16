@@ -18,12 +18,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 
 /**
- *
+ * @author bhawani
  */
 public class Main extends JFrame {
 
@@ -53,10 +56,8 @@ public class Main extends JFrame {
 
 	private CardLayout cardLayout = new CardLayout();
 
-	/**
-	 * 
-	 */
 	public Main() {
+		super("Demo - String & Arrays");
 		this.redirectingOutputStreams();
 		this.initialize();
 		this.addComponents();
@@ -85,7 +86,6 @@ public class Main extends JFrame {
 		this.arrayScrollPane = new JScrollPane(this.arrayPanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 		this.sidePanel = new JPanel(new GridBagLayout());
-		// this.sidePanel.setLayout(new BoxLayout(this.sidePanel, BoxLayout.PAGE_AXIS));
 		this.sideScrollPane = new JScrollPane(this.sidePanel, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.outputTextArea = new JTextArea(20, 40);
 		this.outputScrollPane = new JScrollPane(this.outputTextArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -107,8 +107,12 @@ public class Main extends JFrame {
 
 	private void theming() {
 		this.stringBasicLabel.setBorder(this.compoundRaised);
+		this.stringBasicLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		this.stringAdvanceLabel.setBorder(this.compoundRaised);
+		this.stringAdvanceLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		this.arrayLabel.setBorder(this.compoundRaised);
+		this.arrayLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		this.outputTextArea.setEditable(false);
 	}
 
 	private void addListeners() {
@@ -183,6 +187,17 @@ public class Main extends JFrame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			e.printStackTrace();
+		}
 		new Main();
 
 	}

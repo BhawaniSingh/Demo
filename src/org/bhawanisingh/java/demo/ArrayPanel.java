@@ -10,6 +10,9 @@ import javax.swing.JRadioButton;
 
 import org.bhawanisingh.java.demo.array.ArrayDemo;
 
+/**
+ * @author bhawani
+ */
 public class ArrayPanel extends JPanel {
 	private ButtonGroup buttonGroup;
 	private JRadioButton maxRadioButton;
@@ -109,7 +112,6 @@ public class ArrayPanel extends JPanel {
 		this.add(this.triangleBMatrixMinRadioButton);
 		this.add(this.triangleBMatrixSumRadioButton);
 		this.add(this.triangleBMatrixAddRadioButton);
-
 	}
 
 	private void addListeners() {
@@ -117,15 +119,14 @@ public class ArrayPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ArrayPanel.this.main.clearOutput();
-				System.out.println("Max Value Is:\t" + ArrayDemo.max(new int[] { 10, 100, 200, 23, 34, 3434, 546, 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 }) + "\n");
-
+				System.out.println("Max Value Is:\t" + ArrayDemo.maximun(new int[] { 10, 100, 200, 23, 34, 3434, 546, 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 }) + "\n");
 			}
 		});
 		this.maxArrayRadioButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ArrayPanel.this.main.clearOutput();
-				System.out.println("Max Value Is (For Array Of Arrays):\t" + ArrayDemo.max1(new int[][] {
+				System.out.println("Max Value Is (For Array Of Arrays):\t" + ArrayDemo.arraysMaximum(new int[][] {
 						{ 10, 100, 200, 23 },
 						{ 34, 3434, 546, 6, 5 },
 						{ 6, 7, 8, 9, 0, 2, 3, 4, 5 },
@@ -138,14 +139,14 @@ public class ArrayPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ArrayPanel.this.main.clearOutput();
-				System.out.println("Min Value Is:\t" + ArrayDemo.min(new int[] { 10, 100, 200, 23, 34, 3434, 546, 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 }) + "\n");
+				System.out.println("Min Value Is:\t" + ArrayDemo.minimum(new int[] { 10, 100, 200, 23, 34, 3434, 546, 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 }) + "\n");
 			}
 		});
 		this.minArrayRadioButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ArrayPanel.this.main.clearOutput();
-				System.out.println("Min Value Is (For Array Of Arrays):\t" + ArrayDemo.min1(new int[][] {
+				System.out.println("Min Value Is (For Array Of Arrays):\t" + ArrayDemo.arrayMinimum(new int[][] {
 						{ 10, 100, 200, 23 },
 						{ 34, 3434, 546, 6, 5 },
 						{ 6, 7, 8, 9, 0, 2, 3, 4, 5 },
@@ -167,7 +168,7 @@ public class ArrayPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				ArrayPanel.this.main.clearOutput();
 				System.out.println("Sorting (For Array of Arrays):");
-				ArrayDemo.sort1(new int[][] {
+				ArrayDemo.arraySort(new int[][] {
 						{ 10, 100, 200, 23 },
 						{ 34, 3434, 546, 6, 5 },
 						{ 6, 7, 8, 9, 0, 2, 3, 4, 5 },
@@ -181,7 +182,7 @@ public class ArrayPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				ArrayPanel.this.main.clearOutput();
 				System.out.println("Merge Sort:");
-				ArrayDemo.mergesort(new int[] { 10, 100, 200, 23, 34, 3434, 546 }, new int[] { 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 });
+				ArrayDemo.mergeSort(new int[] { 10, 100, 200, 23, 34, 3434, 546 }, new int[] { 6, 5, 6, 7, 8, 9, 0, 2, 3, 4, 5, 6, 7, 10, 100, 209 });
 			}
 		});
 		this.unionRadioButton.addActionListener(new ActionListener() {
@@ -282,6 +283,5 @@ public class ArrayPanel extends JPanel {
 				System.out.print("Triangle B Sum:\t" + ArrayDemo.triangleBsum1(new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } }));
 			}
 		});
-
 	}
 }

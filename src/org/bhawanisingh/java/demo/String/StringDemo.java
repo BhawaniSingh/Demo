@@ -1,7 +1,6 @@
 package org.bhawanisingh.java.demo.String;
 
 /**
- * 
  * @author Bhawani Singh
  */
 public class StringDemo {
@@ -145,9 +144,9 @@ public class StringDemo {
 			for (i = 0; i >= i; i++) {
 				s.charAt(i);
 			}
-		} finally {
-			return i;
+		} catch (StringIndexOutOfBoundsException stringIndexOutOfBoundsException) {
 		}
+		return i;
 	}
 
 	public static void sequenceCount(String s) {
@@ -214,10 +213,8 @@ public class StringDemo {
 	public static String singleOccurance(String s) {
 		char c[] = s.toCharArray();
 		int count = 0;
-		int temp;
 		for (int i = 0; i < c.length; i++) {
 			if (c[i] != ' ') {
-				temp = i;
 				for (int j = i + 1; j < c.length; j++) {
 					if (c[i] == c[j]) {
 						count++;
@@ -456,92 +453,5 @@ public class StringDemo {
 				System.out.println(ar[i] + "\t:\t" + ocr);
 			}
 		}
-	}
-
-	public static void main(String... s) {
-		// Word Count Function
-		System.out.println("1.\tTotal Number Of Words :\t" + StringDemo.wordCount("Incredible India"));
-
-		// Space Count Function
-		System.out.println("\n2.\tTotal Number Of Spaces :\t" + StringDemo.spaceCount("Incredible India"));
-
-		// Char Count Function
-		System.out.println("\n3.\tTotal Number Of Charatcters :\t" + StringDemo.charCount("Incredible India"));
-
-		// Reverse Function
-		System.out.println("\n4.\tReversed String :\t" + StringDemo.reverseString("Awesome"));
-
-		// Pallindrome Function
-		System.out.println("\n5.\tPallindrome Check :\t" + StringDemo.pallindrome("madam1"));
-
-		// lTrim Function
-		System.out.println("\n6.\tLeft Trim :\t" + StringDemo.lTrim("     nvidia") + "\t\tLength After Left Trimming :\t" + StringDemo.lTrim("      nvidia").length());
-
-		// rTrim Function
-		System.out.println("\n7.\tRight Trim :\t" + StringDemo.rTrim("nvidia     ") + "\t\tLength After Right Trimming :\t" + StringDemo.rTrim("nvidia     ").length());
-
-		// allTrim Function
-		System.out.println("\n8.\tAll Trim:\t" + StringDemo.allTrim("    nvidia    ") + "\t\tLength After Trimming :\t" + StringDemo.allTrim("    nvidia    ").length());
-
-		// Squeeze Function
-		System.out.println("\n9.\tSqueeze :\t" + StringDemo.squeeze(" n v i d i a "));
-
-		// Vowel Count Function
-		System.out.println("\n10.\tTotal Number Of Vowels :\t" + StringDemo.vowelCount("World Is Awesome"));
-
-		// Length function
-		System.out.println("\n11.\tLength Is :\t" + StringDemo.length("World Is Awesome"));
-
-		// Sequence Count Function
-		System.out.println("\n12.\tSequence Count :\t");
-		StringDemo.sequenceCount("Cool India");
-
-		// Frequency Count Function
-		System.out.println("\n13.\tFrequency Count :\t");
-		StringDemo.frequencyCount("INDIA IS GREAT");
-
-		// Change Case Function
-		System.out.println("\n14.\tAfter Changing Case :\t" + StringDemo.changeCase("WoRlD"));
-
-		// Single Occurrance Function
-		System.out.println("\n15.\tSingle Occurance :\t" + StringDemo.singleOccurance("IIIIIIIIIINNNNNNNNNNNNNDDDDDDDDDDDDDDDDDIIIIIIIIIIIIIIIAAAA   IIIISSSS BBBBEEEESSST"));
-
-		// Sorted Order Function
-		System.out.println("\n16.\tSorted Order :\t" + StringDemo.sortedOrder("india"));
-
-		// Sorted Word Function
-		System.out.println("\n17.\tSorted Word :\t" + StringDemo.sortedWord("Java C++ Ducat Kool World"));
-
-		// Find Function
-		System.out.println("\n18.\tFind :\t" + StringDemo.find("Java :- Good Programming Language", "Language"));
-
-		// Replace Function
-		System.out.println("\n19.\tReplace :\t" + StringDemo.replace("Java C++ Python Ruby English Php", "English", "Visual Basic"));
-
-		// Equals Function
-		System.out.println("\n20.\tEquals :\t" + StringDemo.equals("Ducat India", "Ducat India"));
-
-		// Triangle1 Function
-		System.out.println("\n21.\tTriangle1:");
-		StringDemo.triangle1("Ducat");
-
-		// Triangle2 Function
-		System.out.println("\n\n22.\tTriangle2:");
-		StringDemo.triangle2("Ducat");
-
-		// Triangle3 Function
-		System.out.println("\n\n23.\tTriangle3:");
-		StringDemo.triangle3("Ducat");
-
-		// Triangle4 Function
-		System.out.println("\n\n24.\tTriangle4:");
-		StringDemo.triangle4("Ducat");
-
-		// Compare Function
-		System.out.println("\n\n25.\tCompare :\t" + StringDemo.compare("Ducat", "Ducat"));
-
-		// Word Frequency Count Function
-		System.out.println("\n26.\tWord Frequency Count :\t");
-		StringDemo.wordFrequencyCount("Life Is Incredible India Is Incredible Earth Is Best Planet Punjab Is Best");
 	}
 }
